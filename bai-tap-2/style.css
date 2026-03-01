@@ -1,0 +1,7 @@
+.header {
+  display: flex;
+  background-color: bisque;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  justify-content: center;
+  color: cornflowerblue;
+}
