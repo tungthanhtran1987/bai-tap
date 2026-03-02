@@ -1,0 +1,12 @@
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.content img {
+    max-width: 100%;
+}
+
+.content :is(p, ul, ol, blockquote) {
+    margin: 60px 0;
+}
