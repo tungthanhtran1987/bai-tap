@@ -1,0 +1,198 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        "Open Sans",
+        "Helvetica Neue",
+        sans-serif;
+}
+
+/* CV */
+
+.cv-wrapper {
+    background-color: #a57674;
+    min-height: 100vh;
+    padding: 24px 0;
+    font-size: 8.1px;
+}
+
+.cv-container {
+    max-width: 582px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px 50px;
+    text-align: justify;
+}
+
+.cv-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.cv-header h1 {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.cv-section h2 {
+    font-weight: 600;
+    font-size: 9px;
+    border-bottom: 1.3px solid;
+    padding-bottom: 4px;
+}
+
+.cv-section:last-child .cv-item {
+    margin: 12px 0 0;
+}
+
+.cv-item {
+    margin: 12px 0;
+}
+
+.item-header {
+    margin-bottom: 2px;
+    text-align: justify;
+}
+
+.item-header h3,
+.item-header span {
+    display: inline-block;
+    font-weight: bold;
+}
+
+.stretch {
+    width: 100%;
+}
+
+.item-details ul {
+    list-style-type: disc; /* Gọi lại dấu chấm tròn đen */
+    padding-left: 15px; /* Thụt lề vào 15px để lấy chỗ hiển thị dấu chấm */
+}
+
+.item-details li {
+    line-height: 1.55;
+    padding-left: 6px;
+}
+
+/* Menu */
+
+.menu-wrapper {
+    background-color: #7794d9;
+    min-height: 100vh;
+}
+
+.menu {
+    background-color: #3e5cca;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0;
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.menu li a {
+    display: block;
+    text-decoration: none;
+    padding: 30px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.menu .active a,
+.menu li a:hover {
+    background-color: #fff;
+    color: black;
+}
+
+/* Form */
+
+.form-wrapper {
+    background-color: #1c9dee;
+    min-height: 100vh;
+    padding: 5vh 0;
+    /* position: relative; */
+}
+
+.form-register {
+    max-width: 500px;
+    width: 100%;
+    background-color: #fff;
+    min-height: 500px; /* Cho tạm 1 chiều cao để dễ nhìn, sau này có chữ nó tự phình ra */
+    border-radius: 10px;
+    margin: 0 auto;
+    /* CĂN GIỮA */
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+}
+
+.form-header {
+    font-size: 28px;
+    font-weight: bold;
+    background-color: #b8f907;
+    padding: 10px 0;
+    border-radius: 10px 10px 0 0;
+    color: rgb(77, 59, 211);
+    text-align: center;
+}
+
+.form-body {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.form-control {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 5px;
+    outline: none;
+    width: 100%;
+    
+}
+
+.form-check-label {
+    font-size: 15px;
+    color: rgb(61, 61, 61);
+}
+
+.avatar {
+    width: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.btn-submit {
+    padding: 5px;
+    background-color: #b8f907;
+    border-radius: 5px;
+    border: 1px solid gray;
+    width: 100%;
+    cursor: pointer;
+}
