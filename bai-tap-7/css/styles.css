@@ -38,7 +38,7 @@ a {
 
 img {
     display: block;
-    /* max-width: 100%; */
+    max-width: 100%;
 }
 
 button {
@@ -107,6 +107,51 @@ select {
     font-family: var(--font-heading);
     font-size: 1.5rem;
     font-weight: 700;
+}
+
+.menu > li {
+    position: relative;
+}
+
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 210px;
+    background: var(--white);
+    z-index: 99;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.submenu a {
+    color: rgba(0, 0, 0, 0.7);
+    text-transform: capitalize;
+    font-weight: normal;
+    padding: 1.5rem 2.5rem;
+    display: block;
+    transition: all 0.5s ease;
+}
+
+.submenu li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.submenu li:last-child {
+    border-bottom: none;
+}
+
+.menu > li:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.submenu a:hover {
+    background-color: var(--primary);
+    color: var(--white);
 }
 
 .search-cart {
@@ -217,10 +262,12 @@ select {
     align-items: center;
     text-decoration: none;
     padding: 0 2.5rem;
+    transition: all 0.3s ease;
 }
 
 .sidebar-nav__list a:hover {
     color: var(--secondary);
+    padding-left: 3rem;
 }
 
 .main-content {
@@ -262,7 +309,10 @@ select {
 .course-list .item {
     /* min-height: 474px; */
     /* background: green; */
-    width: calc((100% - var(--course-gap) * (var(--course-columns) - 1)) / var(--course-columns));
+    width: calc(
+        (100% - var(--course-gap) * (var(--course-columns) - 1)) /
+            var(--course-columns)
+    );
     /* margin-left: 30px; */
     display: flex;
     flex-direction: column;
@@ -326,7 +376,7 @@ select {
     color: #00000099;
 }
 
-.bottom a {
+.course-btn {
     text-decoration: none;
     border-radius: 30px;
     background-color: var(--secondary);
@@ -338,6 +388,11 @@ select {
     color: var(--white);
     padding: 0 8px;
     margin-left: auto;
+}
+
+.course-btn-fee {
+    background-color: var(--primary);
+    font-weight: bold;
 }
 
 .pages {
@@ -681,6 +736,6 @@ select {
     display: inline-block;
     text-decoration: none;
     line-height: 36px;
-    border: 1px solid rgba(0,0,0,0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 0 15px;
 }
