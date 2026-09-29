@@ -1,0 +1,73 @@
+/* ==========================================================================
+   MODERN CSS RESET
+   ========================================================================== */
+
+/* 1. Box-sizing chuẩn và loại bỏ margin/padding mặc định */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Cuộn mượt và chiều cao tối thiểu */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 3. Responsive media mặc định */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 4. Kế thừa font và màu cho form controls */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+}
+
+/* 5. Bỏ style mặc định của button */
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* 6. Bỏ bullet mặc định của danh sách */
+ul,
+ol {
+    list-style: none;
+}
+
+/* 7. Bỏ gạch chân mặc định của thẻ a */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 8. Tránh tràn chữ */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}

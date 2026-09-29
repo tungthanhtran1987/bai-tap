@@ -1,0 +1,96 @@
+:root {
+    --white: #fff;
+    --black: #000;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.5rem;
+    font-family: "Source Sans 3", sans-serif;
+    line-height: 1.3;
+}
+
+.dna {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.strand {
+    position: relative;
+    width: 16px;
+    height: 100px;
+}
+
+.dot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #000;
+}
+
+.dot-1 {
+    animation: move 4s linear infinite;
+    animation-delay: calc(var(--i) * 0.33s);
+}
+
+.dot-2 {
+    animation: move 4s linear infinite;
+    animation-delay: calc(var(--i) * 0.33s - 2s);
+}
+
+
+
+@keyframes move {
+    0% {
+        transform: translateY(0) scale(0.8);
+        opacity: 0.6;
+        animation-timing-function: ease-in;
+        /* Bắt đầu rơi nhanh dần */
+    }
+
+    25% {
+        transform: translateY(42px) scale(1.3);
+        opacity: 1;
+        animation-timing-function: ease-out;
+        /* Lao qua giữa và hãm chậm lại về đáy */
+
+    }
+
+    50% {
+        /* Chạm đáy */
+        transform: translateY(84px) scale(0.8);
+        opacity: 0.6;
+        animation-timing-function: ease-in;
+        /* Bắt đầu nảy lên nhanh dần */
+    }
+
+    75% {
+        /* Điểm giữa khi đi lên: lùi xa ra phía sau */
+        transform: translateY(42px) scale(0.5);
+        opacity: 0.3;
+        animation-timing-function: ease-out;
+        /* Lao qua giữa và hãm chậm lại về đỉnh */
+
+    }
+
+    100% {
+        /* Quay về đỉnh */
+        transform: translateY(0) scale(0.8);
+        opacity: 0.6;
+    }
+}
