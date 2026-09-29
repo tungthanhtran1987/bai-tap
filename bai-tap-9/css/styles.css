@@ -1,0 +1,467 @@
+/* ==========================================================================
+   1. DESIGN TOKENS (BIẾN MÀU, FONT & THÔNG SỐ CHUNG)
+   ========================================================================== */
+:root {
+    /* Colors */
+    --color-primary: #b80257;
+    --color-primary-dark: #6025d8;
+    --color-accent: #f2b604;
+    --color-text: #2b2b2b;
+    --color-text-light: #555555;
+    --color-muted: #6c757d;
+    --color-bg-input: #f3f0fa;
+    --color-border: #e9ecef;
+    --color-white: #ffffff;
+    --color-dark: #14171f;
+
+    /* Typography */
+    --font-main: 'Source Sans 3', 'Source Sans Pro', system-ui, sans-serif;
+    --font-heading: 'PT Sans', system-ui, sans-serif;
+
+    /* Layout & Sizing */
+    --container-max-width: 1200px;
+    --header-height: 85px;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+    /* Animation & Transitions */
+    --transition: 0.25s ease;
+}
+
+/* ==========================================================================
+   2. CẤU HÌNH CƠ BẢN & CONTAINER
+   ========================================================================== */
+body {
+    font-family: var(--font-main);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+/* Khung căn giữa trang, giới hạn tối đa 1200px */
+.container {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin-inline: auto;
+    padding-inline: 15px;
+    /* border: 1px solid red; */
+}
+
+/* ==========================================================================
+   3. BLOCK: HEADER & NAVIGATION (BEM)
+   ========================================================================== */
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: transparent;
+    padding-top: 30px;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--header-height);
+    gap: 1rem;
+}
+
+.header__logo-img {
+    max-height: 42px;
+}
+
+.nav__list {
+    display: flex;
+}
+
+.nav__item {
+    position: relative;
+}
+
+.nav__link {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--color-white);
+    display: block;
+    padding: 10px 22px;
+}
+
+.nav__link--active {
+    color: var(--color-primary);
+}
+
+.header__action {
+    display: flex;
+    gap: 1.5rem;
+    color: var(--color-white);
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 220px;
+    background-color: var(--color-white);
+    box-shadow: 0px 13px 25px -12px rgba(0, 0, 0, 0.25);
+
+
+    opacity: 0;
+    visibility: hidden;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.nav__item:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: scaleY(1);
+}
+
+.dropdown__link {
+    display: block;
+    padding: 10px 22px;
+    text-transform: capitalize;
+    transition: all 0.25s ease-in-out;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.dropdown__item:last-child .dropdown__link {
+    border-bottom: none;
+}
+
+.dropdown__link:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* ==========================================================================
+   4. BLOCK: PAGE BANNER (BEM)
+   ========================================================================== */
+.page-banner {
+    background-image: url(../images/home/banner-7.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.page-banner__overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 220px 0 170px;
+    text-align: center;
+}
+
+.page-banner__title {
+
+    color: var(--color-white);
+    text-transform: uppercase;
+    font-family: var(--font-heading);
+}
+
+.breadcrumbs__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.breadcrumbs__item {
+    color: var(--color-white);
+    font-size: 1rem;
+}
+
+.breadcrumbs__link {
+    color: var(--color-white);
+    transition: var(--transition);
+}
+
+.breadcrumbs__link:hover {
+    color: var(--color-primary);
+}
+
+.breadcrumbs__item:not(:last-child)::after {
+    content: "/";
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+/* ==========================================================================
+   5. BLOCK: CONTACT INFO (BEM)
+   ========================================================================== */
+.contact-info {
+    padding: 100px 0;
+}
+
+.contact-info__grid {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    align-items: stretch;
+    gap: 30px;
+}
+
+.contact-info__media {
+    overflow: hidden;
+}
+
+.contact-info__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Hộp thông tin liên hệ nền tím */
+.contact-info__card {
+    background: url(../images/inner-page/4.jpg) no-repeat center / cover;
+}
+
+.contact-info__overlay {
+    background-color: rgba(119, 60, 238, 0.85);
+    padding: 60px 40px 80px 50px;
+    height: 100%;
+}
+
+/* Tiêu đề OUR CONTACT có gạch chân vàng */
+.contact-info__title {
+    color: var(--color-white);
+    font-size: 1.85rem;
+    font-family: var(--font-heading);
+    margin-bottom: 50px;
+    padding-bottom: 16px;
+    position: relative;
+}
+
+.contact-info__title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 90px;
+    height: 3px;
+    background-color: var(--color-accent);
+}
+
+.contact-info__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 35px;
+    color: var(--color-white);
+}
+
+.contact-info__item:last-child {
+    margin-bottom: 0;
+}
+
+.contact-info__icon {
+    font-size: 1.8rem;
+    color: var(--color-white);
+    min-width: 32px;
+    margin-top: 4px;
+}
+
+.contact-info__text,
+.contact-info__link {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-white);
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   6. BLOCK: CONTACT FORM (BEM)
+   ========================================================================== */
+.contact-form {
+    padding-bottom: 100px;
+}
+
+/* Lưới 2 cột cho Form */
+.contact-form__form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+/* Ô Textarea và Khối Nút bấm chiếm trọn bề ngang 2 cột */
+.contact-form__group--full,
+.contact-form__action {
+    grid-column: 1 / -1;
+    /* border: 1px solid red */
+}
+
+/* Kiểu dáng ô Input và Textarea */
+.contact-form__input,
+.contact-form__textarea {
+    width: 100%;
+    background-color: var(--color-bg-input);
+    border: 1px solid var(--color-bg-input);
+    color: var(--color-text);
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0 20px;
+    transition: var(--transition);
+}
+
+.contact-form__input {
+    height: 70px;
+}
+
+.contact-form__textarea {
+    padding: 25px 20px;
+    resize: none;
+    min-height: 250px;
+}
+
+/* Hiệu ứng khi bấm vào ô nhập liệu (Focus) */
+.contact-form__input:focus,
+.contact-form__textarea:focus {
+    outline: none;
+    border-color: var(--color-primary-dark);
+    background-color: var(--color-white);
+}
+
+/* Nút bấm Gửi (Send) - Vuông vức, chuẩn kích thước bản gốc */
+.contact-form__submit {
+    width: 150px;
+    height: 48px;
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: block;
+}
+
+.contact-form__submit:hover {
+    background-color: var(--color-primary);
+}
+
+/* ==========================================================================
+   7. BLOCK: GOOGLE MAP (BEM)
+   ========================================================================== */
+.contact-map {
+    width: 100%;
+    height: 480px;
+}
+
+.contact-map__iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* ==========================================================================
+   8. BLOCK: FOOTER (BEM)
+   ========================================================================== */
+.footer {
+    background-color: #151515;
+    padding: 80px 0 120px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Lưới chia 5 cột: Cột 1 (3 phần) - Cột 2,3,4 (mỗi cột 2 phần) - Cột 5 (3 phần) */
+.footer__grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr 2fr 2fr 3fr;
+    gap: 30px;
+}
+
+/* Tiêu đề từng cột */
+.footer__title {
+    color: var(--color-white);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+
+/* Đoạn chữ mô tả & Bản quyền */
+.footer__desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.footer__copyright {
+    font-size: 0.85rem;
+    margin-bottom: 25px;
+}
+
+/* --- Cột 1: Logo & Nút tải App --- */
+.footer__logo {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.footer__logo img {
+    max-height: 40px;
+}
+
+.footer__apps {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* --- Cột 2, 3, 4: Danh sách liên kết --- */
+.footer__item {
+    margin-bottom: 8px;
+}
+
+.footer__link {
+    color: rgba(255, 255, 255, 0.6);
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.footer__link:hover {
+    color: var(--color-primary);
+}
+
+/* --- Cột 5: Hộp đăng ký nhận tin (Subscribe Form) --- */
+.footer__input {
+    width: 100%;
+    height: 40px;
+    background-color: #272727;
+    border: none;
+    border-radius: 20px;
+    padding: 0 20px;
+    color: var(--color-white);
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    outline: none;
+}
+
+
+.footer__btn {
+    width: 95px;
+    height: 40px;
+    background-color: var(--color-primary);
+    /* Nền hồng thương hiệu */
+    color: var(--color-white);
+    border: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: block;
+}
+
+.footer__btn:hover {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+}
