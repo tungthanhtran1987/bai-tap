@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/tables.css">
+</head>
+
+<body>
+    <table class="report-table">
+        <thead>
+            <!-- HÀNG 1: TIÊU ĐỀ LỚN (Gộp trọn vẹn 10 cột) -->
+            <tr class="report-table__title-row">
+                <th class="report-table__title" colspan="10">
+                    <h2>Table A(2b)</h2>
+                    <p class="title-bold">Attributable Ownership Interest by Ethnicity</p>
+                    <p>Stations with One or More Attributable Persons</p>
+                    <p class="title-bold">Full Power Commercial Television Stations - 2013</p>
+                </th>
+            </tr>
+
+            <!-- HÀNG 2: ETHNICITY & CỘT TỔNG THỂ -->
+            <tr>
+                <th colspan="2" rowspan="3" class="report-table__ethnicity">Ethnicity</th>
+                <th colspan="8">No. of Stations and Percent of Total</th>
+            </tr>
+
+            <!-- HÀNG 3: 4 KHU VỰC LỚN (Mỗi ô gộp 2 cột con) -->
+            <tr>
+                <th colspan="2">Nationally</th>
+                <th colspan="2">Nielsen<br>DMA 1-50</th>
+                <th colspan="2">DMA<br>51-100</th>
+                <th colspan="2">DMA<br>101+</th>
+            </tr>
+
+            <!-- HÀNG 4: 8 CỘT CON (No. và %) -->
+            <tr>
+                <th>No.</th>
+                <th>%</th>
+                <th>No.</th>
+                <th>%</th>
+                <th>No.</th>
+                <th>%</th>
+                <th>No.</th>
+                <th>%</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <!-- ==================== NHÓM 1: HISPANIC OR LATINO ==================== -->
+            <tr>
+                <th rowspan="3" class="col-ethnicity">Hispanic or Latino</th>
+                <td class="col-gender">Female</td>
+                <td>96</td>
+                <td>7.7</td>
+                <td>69</td>
+                <td>14.8</td>
+                <td>9</td>
+                <td>2.7</td>
+                <td>18</td>
+                <td>4.1</td>
+            </tr>
+            <tr>
+                <td class="col-gender">Male</td>
+                <td>274</td>
+                <td>22.1</td>
+                <td>153</td>
+                <td>32.9</td>
+                <td>56</td>
+                <td>17.0</td>
+                <td>65</td>
+                <td>14.6</td>
+            </tr>
+            <tr class="row-total">
+                <th class="col-gender">Total</th>
+                <td>322</td>
+                <td>26.0</td>
+                <td>189</td>
+                <td>40.6</td>
+                <td>64</td>
+                <td>19.4</td>
+                <td>69</td>
+                <td>15.5</td>
+            </tr>
+            <!-- ==================== NHÓM 2: NON-HISPANIC OR LATINO ==================== -->
+            <tr>
+                <th rowspan="3" class="col-ethnicity">Non-Hispanic or Latino</th>
+                <td class="col-gender">Female</td>
+                <td>984</td>
+                <td>79.4</td>
+                <td>404</td>
+                <td>86.9</td>
+                <td>273</td>
+                <td>82.7</td>
+                <td>307</td>
+                <td>69.1</td>
+            </tr>
+            <tr>
+                <td class="col-gender">Male</td>
+                <td>1,201</td>
+                <td>96.9</td>
+                <td>458</td>
+                <td>98.5</td>
+                <td>327</td>
+                <td>99.1</td>
+                <td>416</td>
+                <td>93.7</td>
+            </tr>
+            <tr class="row-total">
+                <th class="col-gender">Total</th>
+                <td>1,210</td>
+                <td>97.7</td>
+                <td>460</td>
+                <td>98.9</td>
+                <td>329</td>
+                <td>99.7</td>
+                <td>421</td>
+                <td>94.8</td>
+            </tr>
+
+            <!-- ==================== NHÓM 3: 4 HÀNG TỔNG KẾT ==================== -->
+            <!-- Hàng Total stations có viền trên đậm hơn -->
+            <tr class="row-summary-divider row-bold">
+                <th colspan="2" class="col-summary">Total stations</th>
+                <td>1,239</td>
+                <td>100%</td>
+                <td>465</td>
+                <td>100%</td>
+                <td>330</td>
+                <td>100%</td>
+                <td>444</td>
+                <td>100%</td>
+            </tr>
+            <tr>
+                <th colspan="2" class="col-summary font-normal">Insufficient data</th>
+                <td>147</td>
+                <td>---</td>
+                <td>75</td>
+                <td>---</td>
+                <td>30</td>
+                <td>---</td>
+                <td>42</td>
+                <td>---</td>
+            </tr>
+            <tr>
+                <th colspan="2" class="col-summary font-normal">Stations not filed</th>
+                <td>1</td>
+                <td>---</td>
+                <td>0</td>
+                <td>---</td>
+                <td>0</td>
+                <td>---</td>
+                <td>1</td>
+                <td>---</td>
+            </tr>
+            <tr class="row-bold">
+                <th colspan="2" class="col-summary">All licensed stations</th>
+                <td>1,387</td>
+                <td>---</td>
+                <td>540</td>
+                <td>---</td>
+                <td>360</td>
+                <td>---</td>
+                <td>487</td>
+                <td>---</td>
+            </tr>
+
+        </tbody>
+    </table>
+</body>
+
+</html>

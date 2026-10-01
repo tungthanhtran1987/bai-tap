@@ -1,0 +1,137 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f8f9fa;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* 1. Khung bảng tổng thể */
+.report-table {
+    border-collapse: collapse;
+    background-color: #fff;
+    border: 3px solid #000;
+    font-size: 14px;
+    line-height: 1.3;
+    color: #000;
+}
+
+/* 2. Đường viền và căn lề cho tất cả các ô */
+.report-table th,
+.report-table td {
+    border: 1px solid #000;
+    padding: 4px 8px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* 3. Phần tiêu đề bảng */
+.report-table .report-table__title {
+    padding: 12px 16px;
+    text-align: center;
+    border-bottom: 2.5px solid #000;
+}
+
+.report-table .report-table__title h2 {
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+
+.report-table .report-table__title p {
+    font-size: 14px;
+    font-weight: normal;
+    margin: 2px 0;
+}
+
+.report-table .report-table__title .title-bold {
+    font-weight: bold;
+}
+
+/* 4. Đường kẻ dọc đậm ngăn giữa nhãn bên trái và số liệu bên phải */
+.report-table .report-table__ethnicity,
+.report-table .col-gender,
+.report-table .col-summary {
+    border-right: 2.5px solid #000;
+}
+
+.report-table .report-table__ethnicity {
+    width: 250px;
+    vertical-align: middle;
+}
+
+/* Đường kẻ đậm dưới đáy thead (chạy qua cả ô Ethnicity và hàng No. / %) */
+.report-table .report-table__ethnicity,
+.report-table thead tr:last-child th {
+    border-bottom: 2.5px solid #000;
+}
+
+/* Mặc định đưa các cột DMA và các ô No. / % về chữ thường */
+.report-table thead tr:nth-child(3) th,
+.report-table thead tr:nth-child(4) th {
+    font-weight: normal;
+}
+
+/* Chỉ in đậm riêng cột Nationally và 2 ô No. / % đầu tiên của nó */
+.report-table thead tr:nth-child(3) th:first-child,
+.report-table thead tr:nth-child(4) th:nth-child(1),
+.report-table thead tr:nth-child(4) th:nth-child(2) {
+    font-weight: bold;
+}
+
+/* 5. Nhóm Dân tộc & Giới tính */
+/* Tên nhóm Ethnicity: in đậm, căn lề trái, căn giữa dọc */
+.report-table .col-ethnicity {
+    font-weight: bold;
+    text-align: left;
+    padding-left: 10px;
+    width: 170px;
+    vertical-align: middle;
+}
+
+/* Cột giới tính: căn lề trái */
+.report-table .col-gender {
+    text-align: left;
+    padding-left: 10px;
+    width: 80px;
+}
+
+
+/* Chữ Total in đậm */
+.report-table .row-total .col-gender {
+    font-weight: bold;
+}
+
+/* Đường kẻ ngang đậm ở đáy mỗi nhóm (chạy qua cả ô Ethnicity và hàng Total) */
+.report-table .col-ethnicity,
+.report-table .row-total th,
+.report-table .row-total td {
+    border-bottom: 2.5px solid #000;
+}
+
+/* 6. Định dạng cột số liệu */
+/* Căn lề phải cho tất cả số liệu trong thân bảng */
+.report-table tbody td {
+    text-align: right;
+    padding-right: 12px;
+}
+
+/* Chỉ in đậm số liệu thuộc cột Nationally ở hàng Total */
+.report-table .row-total td:nth-of-type(1),
+.report-table .row-total td:nth-of-type(2) {
+    font-weight: bold;
+}
+
+/* 7. Phần tổng kết 4 hàng cuối bảng */
+/* In đậm và căn trái cho cả 4 nhãn tổng kết */
+.report-table .col-summary {
+    font-weight: bold;
+    text-align: left;
+    padding-left: 10px;
+}
+
+/* Chỉ in đậm số liệu thuộc cột Nationally của hàng Total stations và All licensed stations */
+.report-table .row-bold td:nth-of-type(1),
+.report-table .row-bold td:nth-of-type(2) {
+    font-weight: bold;
+}
